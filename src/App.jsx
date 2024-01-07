@@ -7,6 +7,8 @@ import Orders from "./components/orders/Orders";
 import Users from "./components/users/Users";
 import Header from "./components/header/Header";
 import Card from "./components/card/Card";
+import HeaderSatu from "./components/header/header1/HeaderSatu";
+import HeaderDua from "./components/header/header2/HeaderDua";
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -27,8 +29,9 @@ function App() {
               element={
                 <>
                   {" "}
-                  <Header />
-                  <Card />
+                  {/* <HeaderSatu />
+                  <HeaderDua />
+                  <Card /> */}
                   <Home />
                 </>
               }

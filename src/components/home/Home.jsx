@@ -2,58 +2,31 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import LineChart from "../linechart/LineChart";
 import PieChart from "../piechart/PieChart";
+import HeaderSatu from "../header/header1/HeaderSatu";
+import HeaderDua from "../header/header2/HeaderDua";
+import CardDisplay from "../card/Card";
 
 const Home = () => {
   return (
     <div className="p-5">
       {" "}
-      <Container>
+      <Container fluid>
         <Row>
-          <Col
-            sm={6}
-            md={4}
-            lg={3}
-            className="d-flex justify-content-around align-items-center p-3 bg-light border border-secondary shadow-sm"
-          >
-            <i className="bi bi-currency-dollar"></i>
-            <div>
-              <p>sales</p>
-              <h2>234</h2>
-            </div>
-          </Col>
-          <Col
-            sm={6}
-            md={4}
-            lg={3}
-            className="d-flex justify-content-around align-items-center p-3 bg-white border border-secondary shadow-sm"
-          >
-            <i className="bi bi-truck"></i>
-            <div>
-              <p>Delivery</p>
-              <h2>234</h2>
-            </div>
-          </Col>
-          <Col
-            sm={6}
-            md={4}
-            lg={3}
-            className="d-flex justify-content-around align-items-center p-3 bg-white border border-secondary shadow-sm"
-          >
-            <i className="bi bi-currency-dollar"></i>
-            <div>
-              <p>sales</p>
-              <h2>234</h2>
+          <Col>
+            <div className="">
+              <HeaderSatu />
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col className="col-12 col-md-8 p-3">
-            {" "}
-            <LineChart />
+        <Row className="d-flex justify-content-center align-items-center">
+          <Col lg={7} xl={8} xxl={9}>
+            <HeaderDua />
+            <HeaderDua />
           </Col>
-          <Col className="col-12 col-md-4 p-3">
-            {" "}
-            <PieChart />
+          <Col lg={7} xl={4} xxl={3}>
+            <div className="">
+              <CardDisplay />
+            </div>
           </Col>
         </Row>
       </Container>

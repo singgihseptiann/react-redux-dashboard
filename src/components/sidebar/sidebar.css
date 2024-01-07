@@ -1,12 +1,18 @@
+.sidebar ul li {
+  transition: background-color 0.3s ease;
+}
+
 .sidebar ul li:hover {
-  background-color: rgba(128, 0, 128, 0.308);
+  background-color: rgba(0, 0, 255, 0.2);
   color: white;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  padding: 8px 0; /* Adjust the padding as needed */
 }
+
 .sidebar ul li:hover a {
-  color: white;
+  color: rgba(0, 0, 255, 0.7);
 }
 
 .active {
@@ -14,6 +20,11 @@
   color: white;
   border-radius: 5px;
 }
+
 li {
   text-decoration: none;
+}
+
+.text-color {
+  color: #252526c9;
 }

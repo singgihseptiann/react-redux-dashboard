@@ -1,64 +1,60 @@
 import React from "react";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
+import { BiHomeCircle, BiUser, BiChart, BiPersonCircle } from "react-icons/bi";
+import { Image } from "react-bootstrap";
+import Logo from "../../assets/logo/almasoem.png";
+const menuItems = [
+  {
+    path: "/",
+    icon: <BiHomeCircle size={25} className="my-auto" />,
+    text: "Dashboard",
+  },
+  {
+    path: "/users",
+    icon: <BiUser size={25} className="my-auto" />,
+    text: "Users",
+  },
+  {
+    path: "/orders",
+    icon: <BiChart size={25} className="my-auto" />,
+    text: "Orders",
+  },
+  {
+    path: "/reports",
+    icon: <BiChart size={25} className="my-auto" />,
+    text: "Reports",
+  },
+];
 
 const SideBar = () => {
   return (
     <div className="sidebar d-flex justify-content-between flex-column bg-white text-danger ps-3 pe-5 p-3 vh-100">
       <div className="text-white">
-        <a href="#" className="p-3 text-white">
-          <i className="bi bi-code-slash fs-4 me-4"></i>
-          <span className="fs-4">Logo</span>
-        </a>
+        <Image src={Logo} style={{ width: "200px" }} />
         <hr className="text-secondary mt-2" />
         <ul className="nav nav-pills flex-column mt-3">
-          <li className="nav-item p-2">
-            <Link to="/" href="" className="p-3 text-decoration-none text-dark">
-              <i className="bi bi-speedometer2 me-3 fs-4"></i>
-              <span className="fs-4">
-                <strong>Dashboard</strong>
-              </span>
-            </Link>
-          </li>
-          <li className="nav-item p-2">
-            <Link
-              to="/users"
-              href=""
-              className="p-3 text-decoration-none text-dark"
-            >
-              <i className="bi bi-people me-3 fs-4"></i>
-              <span className="fs-4">
-                <strong>Users</strong>
-              </span>
-            </Link>
-          </li>
-          <li className="nav-item p-2">
-            <Link
-              to="/orders"
-              href=""
-              className="p-3 text-decoration-none text-dark"
-            >
-              <i className="bi bi-speedometer2 me-3 fs-4"></i>
-              <span className="fs-4">
-                <strong>Orders</strong>
-              </span>
-            </Link>
-          </li>
-          <li className="nav-item p-2">
-            <span href="" className="p-3">
-              <i className="bi bi-speedometer2 me-3 fs-4"></i>
-              <span className="fs-4">
-                <strong>Reports</strong>
-              </span>
-            </span>
-          </li>
+          {menuItems.map((item, index) => (
+            <li className="nav-item p-2 mb-4" key={index}>
+              <Link
+                to={item.path}
+                href=""
+                className="my-auto text-decoration-none text-color"
+              >
+                <div className="d-flex gap-2">
+                  {item.icon}
+                  <span className="fs-4">{item.text}</span>
+                </div>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div>
         <hr className="text-secondary" />
         <div className="nav-item p-3">
           <a href="" className="p-1">
-            <i className="bi bi-person-circle me-3 fs-4"></i>
+            {/* <BiPersonCircle size={25} /> */}
             <span className="fs-4">{/* <strong>Singgih</strong> */}</span>
           </a>
         </div>

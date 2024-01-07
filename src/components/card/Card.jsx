@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import "./card.css";
 
 const CardDisplay = () => {
   const dataDisplay = [
@@ -39,12 +40,12 @@ const CardDisplay = () => {
   ];
 
   return (
-    <div className="p-3">
+    <div className="">
       <Container>
-        <Row>
+        <Row className="d-flex flex-wrap ">
           {dataDisplay.map((data, index) => (
-            <Col key={index} md={6} lg={6} className="mb-3">
-              <Card>
+            <Col key={index} lg={6} className="mt-5 ">
+              <Card className="custom-card border-0 rounded-3 no-margin-padding">
                 <Card.Body>
                   <div
                     className="icon-container"
@@ -63,7 +64,7 @@ const CardDisplay = () => {
                       style={{ color: data.iconColor }}
                     ></i>
                   </div>
-                  <Card.Title>{data.title}</Card.Title>
+                  <p>{data.title}</p>
                   <Card.Text>{data.money}</Card.Text>
                   <Card.Text style={{ color: data.iconColor }}>
                     {data.statistics}
