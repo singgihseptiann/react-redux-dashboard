@@ -8,7 +8,7 @@ const CardDisplay = () => {
     {
       title: "UMKM Loans",
       iconClass: "bi-wallet",
-      bgIcon: "rgba(0, 128, 0, 0.3)", // Lighter shade of green
+      bgIcon: "rgba(0, 128, 0, 0.3)",
       iconColor: "green",
       money: "Rp. 123.456.789",
       statistics: "+72.80%",
@@ -16,7 +16,7 @@ const CardDisplay = () => {
     {
       title: "KPR Loans",
       iconClass: "bi-wallet",
-      bgIcon: "rgba(255, 165, 0, 0.3)", // Lighter shade of orange
+      bgIcon: "rgba(255, 165, 0, 0.3)",
       iconColor: "orange",
       money: "Rp. 987.654.321",
       statistics: "-15.25%",
@@ -24,7 +24,7 @@ const CardDisplay = () => {
     {
       title: "Loan Approved",
       iconClass: "bi-box",
-      bgIcon: "rgba(0, 128, 0, 0.3)", // Lighter shade of green
+      bgIcon: "rgba(0, 128, 0, 0.3)",
       iconColor: "green",
       money: "Rp. 567.890.123",
       statistics: "+10.50%",
@@ -32,7 +32,7 @@ const CardDisplay = () => {
     {
       title: "Loan Rejected",
       iconClass: "bi-bar-chart",
-      bgIcon: "rgba(0, 0, 255, 0.3)", // Lighter shade of blue
+      bgIcon: "rgba(0, 0, 255, 0.3)",
       iconColor: "blue",
       money: "Rp. 456.789.012",
       statistics: "+25.60%",
@@ -54,9 +54,9 @@ const CardDisplay = () => {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      height: "50px", // Adjust the height as needed
-                      width: "50px", // Adjust the width as needed
-                      borderRadius: "10%", // To make it circular
+                      height: "50px",
+                      width: "50px",
+                      borderRadius: "10%",
                     }}
                   >
                     <i
