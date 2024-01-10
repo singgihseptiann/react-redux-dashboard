@@ -1,38 +1,50 @@
-// TableCustom.jsx
 import React, { useState } from "react";
 import { Col, Container, Row, Button, Modal } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
+import ModalConfirm from "../modal/ModalConfirm";
+import ModalEdit from "../modal/ModalEdit";
 
-const TableCustom = ({
-  headers,
-  showActions,
-  data,
-  onUbahClick,
-  onDeleteClick,
-  onConfirmDelete,
-}) => {
+const TableCustom = ({ headers, showActions, data, onUbahClick, onDeleteClick, onConfirmDelete }) => {
   const [deleteConfirm, setDeleteConfirm] = useState({
     show: false,
     rowIndex: null,
   });
+
+  const [editModal, setEditModal] = useState({
+    show: false,
+    rowIndex: null,
+  });
+
+  const [editedData, setEditedData] = useState([]);
 
   const handleDeleteClick = (rowIndex) => {
     setDeleteConfirm({ show: true, rowIndex });
   };
 
   const handleConfirmDelete = () => {
-    // Lakukan penghapusan data dari array dummy berdasarkan rowIndex
     const updatedData = [...data];
     updatedData.splice(deleteConfirm.rowIndex, 1);
-    // TODO: Lakukan pembaruan state atau panggil fungsi untuk menyimpan data
-    // Contoh: updateData(updatedData);
-
     setDeleteConfirm({ show: false, rowIndex: null });
-    onConfirmDelete(); // Panggil fungsi konfirmasi hapus dari prop
+    onConfirmDelete(updatedData); // Kirim data yang telah dihapus ke prop onConfirmDelete
   };
 
   const handleCancelDelete = () => {
     setDeleteConfirm({ show: false, rowIndex: null });
+  };
+
+  const handleEditClick = (rowIndex) => {
+    setEditedData([...data[rowIndex]]);
+    setEditModal({ show: true, rowIndex });
+  };
+
+  const handleCancelEdit = () => {
+    setEditedData([]);
+    setEditModal({ show: false, rowIndex: null });
+  };
+
+  const handleConfirmEdit = (newData) => {
+    console.log("Aksi ubah dilakukan dengan data baru:", newData);
+    handleCancelEdit();
   };
 
   return (
@@ -49,9 +61,7 @@ const TableCustom = ({
                         {header}
                       </th>
                     ))}
-                  {showActions && (
-                    <th style={{ backgroundColor: "#cfd4ed" }}>Aksi</th>
-                  )}
+                  {showActions && <th style={{ backgroundColor: "#cfd4ed" }}>Aksi</th>}
                 </tr>
               </thead>
               <tbody>
@@ -64,16 +74,10 @@ const TableCustom = ({
                       {showActions && (
                         <td>
                           <div className="d-flex justify-content-center gap-1">
-                            <button
-                              className="text-primary bg-white border-0 fw-bold"
-                              onClick={() => onUbahClick(rowIndex)} // Panggil fungsi ubah dari prop
-                            >
+                            <button className="text-primary bg-white border-0 fw-bold" onClick={() => handleEditClick(rowIndex)}>
                               Ubah
                             </button>
-                            <button
-                              className="text-danger border-0 bg-white fw-bold"
-                              onClick={() => handleDeleteClick(rowIndex)}
-                            >
+                            <button className="text-danger border-0 bg-white fw-bold" onClick={() => handleDeleteClick(rowIndex)}>
                               Hapus
                             </button>
                           </div>
@@ -87,21 +91,11 @@ const TableCustom = ({
         </Col>
       </Row>
 
-      {/* Modal Konfirmasi Hapus */}
-      <Modal show={deleteConfirm.show} onHide={handleCancelDelete}>
-        <Modal.Header closeButton>
-          <Modal.Title>Konfirmasi Hapus</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Apakah Anda yakin ingin menghapus data ini?</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCancelDelete}>
-            Batal
-          </Button>
-          <Button variant="danger" onClick={handleConfirmDelete}>
-            Hapus
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      {/* Gunakan ModalConfirm untuk Hapus */}
+      <ModalConfirm show={deleteConfirm.show} onCancel={handleCancelDelete} onConfirm={handleConfirmDelete} />
+
+      {/* Modal untuk Ubah */}
+      <ModalEdit show={editModal.show} onCancel={handleCancelEdit} onConfirm={handleConfirmEdit} initialData={editedData} headers={headers} />
     </Container>
   );
 };
