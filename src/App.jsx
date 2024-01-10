@@ -9,6 +9,9 @@ import Header from "./components/header/Header";
 import Card from "./components/card/Card";
 import HeaderSatu from "./components/header/header1/HeaderSatu";
 import HeaderDua from "./components/header/header2/HeaderDua";
+import FormInput from "./components/form/forminput/FormInput";
+import HorizontalTabs from "./components/tabs/Tabs";
+import TabsPages from "./pages/tabspages/TabsPages";
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -40,7 +43,7 @@ function App() {
               path="/users"
               element={
                 <>
-                  <Users />
+                  <TabsPages />
                 </>
               }
             ></Route>

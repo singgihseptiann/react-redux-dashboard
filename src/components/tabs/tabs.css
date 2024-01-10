@@ -1,0 +1,16 @@
+/* Your custom CSS file (e.g., HorizontalTabs.css) */
+.bg-remove {
+  background-color: transparent !important; /* Set background to none or any other desired style */
+  color: black;
+}
+.custom-tabs .nav-link {
+  background-color: #007bff; /* Blue background color */
+  color: #fff; /* White text color */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+  margin-right: 10px; /* Add spacing between tabs */
+  padding: 10px; /* Add padding for better visual appearance */
+}
+
+.custom-tabs .nav-link.active {
+  background-color: #0056b3; /* Darker blue for active tab */
+}

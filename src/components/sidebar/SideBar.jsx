@@ -14,7 +14,7 @@ const menuItems = [
   {
     path: "/users",
     icon: <BiUser size={25} className="my-auto" />,
-    text: "Users",
+    text: "Ajukan Pembiayaan",
   },
   {
     path: "/orders",
@@ -31,13 +31,20 @@ const menuItems = [
 const SideBar = () => {
   return (
     <div className="sidebar d-flex flex-column bg-white text-danger p-4 vh-100">
-      <Image src={Logo} className="d-none d-md-block" style={{ width: "200px" }} />
+      <Image
+        src={Logo}
+        className="d-none d-md-block"
+        style={{ width: "200px" }}
+      />
       <div className="text-white mb-3">
         <hr className="text-secondary mt-2" />
         <ul className="nav nav-pills flex-column mt-3">
           {menuItems.map((item, index) => (
             <li className="nav-item p-2 mb-4" key={index}>
-              <Link to={item.path} className="my-auto text-decoration-none  text-color">
+              <Link
+                to={item.path}
+                className="my-auto text-decoration-none  text-color"
+              >
                 <div className="d-flex gap-2">
                   {item.icon}
                   <span className="fs-4 d-none d-sm-block">{item.text}</span>
