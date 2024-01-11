@@ -1,59 +1,65 @@
 // HorizontalTabs.js
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import ReusableFormInput from "../form/ReusableFormInput";
+import { useNavigate } from "react-router-dom";
+import PenyaringanAwak from "../form/PenyaringanAwak";
+import SlikUpload from "../form/SlikUpload";
 import "./tabs.css";
 
 const HorizontalTabs = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("home");
 
-  const handleNext = (data) => {
+  const handleNext = () => {
     // Add your logic for handling the next step
-    console.log("Data saved:", data);
+    // For example, check if certain conditions are met
+    const conditionsMet = true; // Replace with your actual conditions
 
-    // Redirect to SLIK Upload page
-    navigate("/slik-upload"); // Adjust the route as per your application
+    if (conditionsMet) {
+      // Navigate to the "Slik Upload" tab
+      setActiveTab("profile");
+    } else {
+      // Handle the case where conditions are not met (e.g., show an error message)
+      console.error("Conditions not met. Cannot proceed to the next step.");
+    }
   };
 
   return (
     <Container>
       <Row>
         <Col>
-          {" "}
-          <Tabs
-            defaultActiveKey="profile"
-            id="uncontrolled-tab-example"
-            className="mb-3 custom-tabs"
-          >
+          <Tabs activeKey={activeTab} onSelect={(key) => setActiveTab(key)} id="uncontrolled-tab-example" className="mb-3 custom-tabs">
             <Tab eventKey="home" title="Penyaringan Awal" className="bg-remove">
-              <div>
-                <ReusableFormInput
-                  label1="No Aplikasi"
-                  label2="Penyaringan Awal"
-                  title="Penyaringan Awal"
-                  label="Field 1"
-                  type="text"
-                  name="field1"
-                  onNext={handleNext} // Pass the custom handleNext function
-                  showButton={true} // Or false based on your logic
-                />
-              </div>
+              <PenyaringanAwak onNext={handleNext} activeTab={activeTab} />
             </Tab>
             <Tab eventKey="profile" title="Slik Upload" className="bg-remove">
-              <ReusableFormInput
-                label="Field 1"
-                type="text"
-                name="field1"
-                onNext={handleNext} // Pass the custom handleNext function
-                showButton={true} // Or false based on your logic
-              />
+              <SlikUpload />
             </Tab>
-            <Tab eventKey="longer-tab" title="Loooonger Tab">
-              Tab content for Loooonger Tab
+            {/* ... other tabs ... */}
+            {/* Additional Tabs */}
+            <Tab eventKey="tab1" title="Tab 1">
+              Tab 1 content
             </Tab>
-            <Tab eventKey="contact" title="Contact" disabled>
-              Tab content for Contact
+            <Tab eventKey="tab2" title="Tab 2">
+              Tab 2 content
+            </Tab>
+            <Tab eventKey="tab3" title="Tab 3">
+              Tab 3 content
+            </Tab>
+            <Tab eventKey="tab4" title="Tab 4">
+              Tab 4 content
+            </Tab>
+            <Tab eventKey="tab5" title="Tab 5">
+              Tab 5 content
+            </Tab>
+            <Tab eventKey="tab6" title="Tab 6">
+              Tab 6 content
+            </Tab>
+            <Tab eventKey="tab7" title="Tab 7">
+              Tab 7 content
+            </Tab>
+            <Tab eventKey="tab8" title="Tab 8">
+              Tab 8 content
             </Tab>
           </Tabs>
         </Col>

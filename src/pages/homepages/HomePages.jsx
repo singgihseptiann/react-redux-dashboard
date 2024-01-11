@@ -1,15 +1,12 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import LineChart from "../linechart/LineChart";
-import PieChart from "../piechart/PieChart";
-import HeaderSatu from "../header/header1/HeaderSatu";
-import HeaderDua from "../header/header2/HeaderDua";
-import CardDisplay from "../card/Card";
-import TableCustom from "../table/Table";
-import TableSatu from "../table/table1/TableSatu";
-import TableDua from "../table/table2/TableDua";
+import HeaderSatu from "../../components/header/header1/HeaderSatu";
+import HeaderDua from "../../components/header/header2/HeaderDua";
+import CardDisplay from "../../components/card/Card";
+import TableSatu from "../../components/table/table1/TableSatu";
+import TableDua from "../../components/table/table2/TableDua";
 
-const Home = () => {
+const HomePages = () => {
   return (
     <div className="p-5">
       {" "}
@@ -43,4 +40,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePages;

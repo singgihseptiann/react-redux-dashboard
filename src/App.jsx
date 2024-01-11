@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import SideBar from "./components/sidebar/SideBar";
 import Navigation from "./components/navbar/Navbar";
-import Home from "./components/home/Home";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Orders from "./components/orders/Orders";
-import Users from "./components/users/Users";
-import Header from "./components/header/Header";
-import Card from "./components/card/Card";
-import HeaderSatu from "./components/header/header1/HeaderSatu";
-import HeaderDua from "./components/header/header2/HeaderDua";
-import FormInput from "./components/form/forminput/FormInput";
-import HorizontalTabs from "./components/tabs/Tabs";
+
 import TabsPages from "./pages/tabspages/TabsPages";
+import HomePages from "./pages/homepages/HomePages";
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -31,11 +26,7 @@ function App() {
               path="/"
               element={
                 <>
-                  {" "}
-                  {/* <HeaderSatu />
-                  <HeaderDua />
-                  <Card /> */}
-                  <Home />
+                  <HomePages />
                 </>
               }
             ></Route>
