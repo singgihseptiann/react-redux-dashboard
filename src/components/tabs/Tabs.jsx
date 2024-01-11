@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import PenyaringanAwak from "../form/PenyaringanAwak";
-import SlikUpload from "../form/SlikUpload";
+import FormPenyaringanAwak from "../form/FormPenyaringanAwak";
+import FormSlikUpload from "../form/FormSlikUpload";
 import "./tabs.css";
 
 const HorizontalTabs = () => {
@@ -17,7 +17,7 @@ const HorizontalTabs = () => {
 
     if (conditionsMet) {
       // Navigate to the "Slik Upload" tab
-      setActiveTab("profile");
+      setActiveTab("slikupload");
     } else {
       // Handle the case where conditions are not met (e.g., show an error message)
       console.error("Conditions not met. Cannot proceed to the next step.");
@@ -30,10 +30,10 @@ const HorizontalTabs = () => {
         <Col>
           <Tabs activeKey={activeTab} onSelect={(key) => setActiveTab(key)} id="uncontrolled-tab-example" className="mb-3 custom-tabs">
             <Tab eventKey="home" title="Penyaringan Awal" className="bg-remove">
-              <PenyaringanAwak onNext={handleNext} activeTab={activeTab} />
+              <FormPenyaringanAwak onNext={handleNext} activeTab={activeTab} />
             </Tab>
-            <Tab eventKey="profile" title="Slik Upload" className="bg-remove">
-              <SlikUpload />
+            <Tab eventKey="slikupload" title="Slik Upload" className="bg-remove">
+              <FormSlikUpload />
             </Tab>
             {/* ... other tabs ... */}
             {/* Additional Tabs */}

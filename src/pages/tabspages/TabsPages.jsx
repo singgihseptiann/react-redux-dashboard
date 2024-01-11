@@ -1,21 +1,15 @@
 import React from "react";
 import HorizontalTabs from "../../components/tabs/Tabs";
 import { Col, Container, Row } from "react-bootstrap";
+import DetailFormAo from "../../components/form/DetailFormAo";
 import ReusableFormInput from "../../components/form/ReusableFormInput";
 
 const TabsPages = () => {
   return (
-    <Container>
+    <Container className="mt-5">
       <Row>
-        <Col>
-          {" "}
-          <ReusableFormInput
-            title="Detail Ao"
-            label="Field 1"
-            type="text"
-            name="field1"
-            showButton={true} // Or false based on your logic
-          />
+        <Col className="mb-4">
+          <DetailFormAo />
         </Col>
       </Row>{" "}
       <Row>

@@ -10,8 +10,8 @@ const PenyaringanAwak = ({ onNext, activeTab }) => {
   };
   return (
     <Container>
-      <Row className="bg-white custom-card rounded-3 border-0">
-        <h1>Penyaringan Awal</h1>
+      <Row className="bg-white custom-card rounded-3 border-0 p-3">
+        <h1 className="fw-bold text-dark">Penyaringan Awal</h1>
         <Col xs={6}>
           {" "}
           <Form.Label>No Aplikasi</Form.Label>
@@ -24,7 +24,6 @@ const PenyaringanAwak = ({ onNext, activeTab }) => {
           </InputGroup>
         </Col>
         <Col xs={6}>
-          {" "}
           <Form.Label>Jenis Nasabah</Form.Label>
           <Form.Control type="text" />
         </Col>
