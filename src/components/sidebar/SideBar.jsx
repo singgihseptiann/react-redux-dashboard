@@ -1,7 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
-import { BiHomeCircle, BiUser, BiChart, BiPersonCircle } from "react-icons/bi";
+import { BiHomeCircle, BiMoney, BiChart, BiPersonCircle } from "react-icons/bi";
 import { Image } from "react-bootstrap";
 import Logo from "../../assets/logo/almasoem.png";
 
@@ -13,7 +13,7 @@ const menuItems = [
   },
   {
     path: "/users",
-    icon: <BiUser size={25} className="my-auto" />,
+    icon: <BiMoney size={25} className="my-auto" />,
     text: "Ajukan Pembiayaan",
   },
   {

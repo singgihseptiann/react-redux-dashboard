@@ -37,28 +37,34 @@ const HorizontalTabs = () => {
             </Tab>
             {/* ... other tabs ... */}
             {/* Additional Tabs */}
-            <Tab eventKey="tab1" title="Tab 1">
+            <Tab eventKey="tab1" title="Slik Review">
               Tab 1 content
             </Tab>
-            <Tab eventKey="tab2" title="Tab 2">
+            <Tab eventKey="tab2" title="Unggah Dokumen">
               Tab 2 content
             </Tab>
-            <Tab eventKey="tab3" title="Tab 3">
+            <Tab eventKey="tab3" title="Skema Pembiayaan">
               Tab 3 content
             </Tab>
-            <Tab eventKey="tab4" title="Tab 4">
+            <Tab eventKey="tab4" title="Formulir Pengajuan">
               Tab 4 content
             </Tab>
-            <Tab eventKey="tab5" title="Tab 5">
+            <Tab eventKey="tab5" title="BPRS Verifikasi">
               Tab 5 content
             </Tab>
-            <Tab eventKey="tab6" title="Tab 6">
+            <Tab eventKey="tab6" title="Partner Verifikasi">
               Tab 6 content
             </Tab>
-            <Tab eventKey="tab7" title="Tab 7">
+            <Tab eventKey="tab7" title="Persetujuan HIKP">
               Tab 7 content
             </Tab>
-            <Tab eventKey="tab8" title="Tab 8">
+            <Tab eventKey="tab8" title="Persetujuan Partner">
+              Tab 8 content
+            </Tab>
+            <Tab eventKey="tab8" title="Dokumen Entry">
+              Tab 8 content
+            </Tab>
+            <Tab eventKey="tab8" title="Unduh Dokumen">
               Tab 8 content
             </Tab>
           </Tabs>
