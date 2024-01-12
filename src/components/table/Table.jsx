@@ -1,10 +1,17 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Button, Modal } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import ModalConfirm from "../modal/ModalConfirm";
 import ModalEdit from "../modal/ModalEdit";
 
-const TableCustom = ({ headers, showActions, data, onUbahClick, onDeleteClick, onConfirmDelete }) => {
+const TableCustom = ({
+  headers,
+  showActions,
+  data,
+  onUbahClick,
+  onDeleteClick,
+  onConfirmDelete,
+}) => {
   const [deleteConfirm, setDeleteConfirm] = useState({
     show: false,
     rowIndex: null,
@@ -61,7 +68,9 @@ const TableCustom = ({ headers, showActions, data, onUbahClick, onDeleteClick, o
                         {header}
                       </th>
                     ))}
-                  {showActions && <th style={{ backgroundColor: "#cfd4ed" }}>Aksi</th>}
+                  {showActions && (
+                    <th style={{ backgroundColor: "#cfd4ed" }}>Aksi</th>
+                  )}
                 </tr>
               </thead>
               <tbody>
@@ -74,10 +83,16 @@ const TableCustom = ({ headers, showActions, data, onUbahClick, onDeleteClick, o
                       {showActions && (
                         <td>
                           <div className="d-flex justify-content-center gap-1">
-                            <button className="text-primary bg-white border-0 fw-bold" onClick={() => handleEditClick(rowIndex)}>
+                            <button
+                              className="text-primary bg-white border-0 fw-bold"
+                              onClick={() => handleEditClick(rowIndex)}
+                            >
                               Ubah
                             </button>
-                            <button className="text-danger border-0 bg-white fw-bold" onClick={() => handleDeleteClick(rowIndex)}>
+                            <button
+                              className="text-danger border-0 bg-white fw-bold"
+                              onClick={() => handleDeleteClick(rowIndex)}
+                            >
                               Hapus
                             </button>
                           </div>
@@ -92,10 +107,20 @@ const TableCustom = ({ headers, showActions, data, onUbahClick, onDeleteClick, o
       </Row>
 
       {/* Gunakan ModalConfirm untuk Hapus */}
-      <ModalConfirm show={deleteConfirm.show} onCancel={handleCancelDelete} onConfirm={handleConfirmDelete} />
+      <ModalConfirm
+        show={deleteConfirm.show}
+        onCancel={handleCancelDelete}
+        onConfirm={handleConfirmDelete}
+      />
 
       {/* Modal untuk Ubah */}
-      <ModalEdit show={editModal.show} onCancel={handleCancelEdit} onConfirm={handleConfirmEdit} initialData={editedData} headers={headers} />
+      <ModalEdit
+        show={editModal.show}
+        onCancel={handleCancelEdit}
+        onConfirm={handleConfirmEdit}
+        initialData={editedData}
+        headers={headers}
+      />
     </Container>
   );
 };

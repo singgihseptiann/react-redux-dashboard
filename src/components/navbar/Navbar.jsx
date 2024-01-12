@@ -21,7 +21,7 @@ function Navigation({ Toggle }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto text-white">
             <Nav.Link className="active" href="#home">
-              <i className="bi bi-search"></i>Search
+              <i className="bi bi-search me-3"></i>Search
             </Nav.Link>
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Account</Nav.Link>

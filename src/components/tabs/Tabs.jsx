@@ -28,11 +28,20 @@ const HorizontalTabs = () => {
     <Container>
       <Row>
         <Col>
-          <Tabs activeKey={activeTab} onSelect={(key) => setActiveTab(key)} id="uncontrolled-tab-example" className="mb-3 custom-tabs">
+          <Tabs
+            activeKey={activeTab}
+            onSelect={(key) => setActiveTab(key)}
+            id="uncontrolled-tab-example"
+            className="mb-4 custom-tabs"
+          >
             <Tab eventKey="home" title="Penyaringan Awal" className="bg-remove">
               <FormPenyaringanAwak onNext={handleNext} activeTab={activeTab} />
             </Tab>
-            <Tab eventKey="slikupload" title="Slik Upload" className="bg-remove">
+            <Tab
+              eventKey="slikupload"
+              title="Slik Upload"
+              className="bg-remove"
+            >
               <FormSlikUpload />
             </Tab>
             {/* ... other tabs ... */}
@@ -58,13 +67,13 @@ const HorizontalTabs = () => {
             <Tab eventKey="tab7" title="Persetujuan HIKP">
               Tab 7 content
             </Tab>
-            <Tab eventKey="tab8" title="Persetujuan Partner">
+            <Tab eventKey="tab9" title="Persetujuan Partner">
               Tab 8 content
             </Tab>
-            <Tab eventKey="tab8" title="Dokumen Entry">
+            <Tab eventKey="tab10" title="Dokumen Entry">
               Tab 8 content
             </Tab>
-            <Tab eventKey="tab8" title="Unduh Dokumen">
+            <Tab eventKey="tab11" title="Unduh Dokumen">
               Tab 8 content
             </Tab>
           </Tabs>

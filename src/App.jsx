@@ -31,7 +31,7 @@ function App() {
               }
             ></Route>
             <Route
-              path="/users"
+              path="/pembiayaan"
               element={
                 <>
                   <TabsPages />

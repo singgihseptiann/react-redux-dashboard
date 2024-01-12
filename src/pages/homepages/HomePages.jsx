@@ -19,11 +19,11 @@ const HomePages = () => {
           </Col>
         </Row>
         <Row className="d-flex justify-content-center align-items-center">
-          <Col lg={7} xl={8} xxl={9}>
+          <Col xs={12} md={12} lg={7} xl={8} xxl={9}>
             <HeaderDua />
             <HeaderDua />
           </Col>
-          <Col lg={7} xl={4} xxl={3}>
+          <Col xs={12} md={12} lg={5} xl={4} xxl={3}>
             <div className="">
               <CardDisplay />
             </div>
